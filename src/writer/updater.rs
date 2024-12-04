@@ -108,7 +108,7 @@ fn write_query_prepare<'a>(table: &'a Table) -> String {
 
     buffer += "\t\t$sth = getPDO()->prepare(\"UPDATE `";
     buffer += &table.name;
-    buffer += "` ";
+    buffer += "` SET ";
 
     let primary_key = table.primary_key.as_ref().unwrap();
     let non_primary_columns = table
